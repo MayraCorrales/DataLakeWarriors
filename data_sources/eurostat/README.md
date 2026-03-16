@@ -1,34 +1,47 @@
 # Eurostat Data Source
 
 ## Description
-Eurostat is the official statistical office of the European Union and provides harmonised, high-quality data across EU member states.
+Eurostat is the official statistical office of the European Union and provides harmonised statistical data across EU member states.
 
-In this project, Eurostat is used as the **static data source** and provides the **macro-level aviation baseline** for the analysis. It supports cross-country comparison by offering structured air transport statistics such as passenger volumes, freight volumes, and flight movements across European airports.
+In this project, Eurostat acts as the **static data source** and provides the **structural aviation baseline** used to contextualise the dynamic signals obtained from AviationStack and NewsAPI.
+
+It provides aggregated aviation statistics such as passenger volumes, freight transport, and flight movements across European airports.
 
 ## Data Access
-Eurostat data is accessed through the Eurostat API and official datasets.
+Eurostat datasets are accessed through the Eurostat API:
+
+https://ec.europa.eu/eurostat/api/
+
+Additional documentation:
+
+https://ec.europa.eu/eurostat
+
+## Example Datasets
+Examples of relevant aviation datasets include:
+
+- Air passenger transport statistics
+- Airport traffic statistics
+- Air freight volumes
+
+These datasets allow cross-country comparison across EU member states.
 
 ## Role in the Project
-Eurostat complements the two dynamic data sources in the project:
+Eurostat provides **long-run structured aviation statistics** that allow us to:
 
-- **NewsAPI** captures major world events and media signals
-- **AviationStack** captures flight activity and operational aviation data
-- **Eurostat** provides harmonised long-run aviation statistics for comparison and contextualisation
+- compare aviation activity across EU countries
+- contextualise changes observed in real-time flight data
+- support statistical analysis together with AviationStack and NewsAPI
 
-This allows us to compare short-term event-driven signals with broader structural aviation patterns across EU countries.
+In the project architecture:
 
-## Example Data
-Example variables or datasets include:
-
-- passenger volumes
-- freight transport volumes
-- flight movements
-- airport-level or country-level aviation statistics
+- **NewsAPI** captures major world events
+- **AviationStack** captures operational flight activity
+- **Eurostat** provides the macro-level aviation baseline
 
 ## Ingestion Process
-The data is retrieved, cleaned, and stored as part of the project data lake pipeline.
+The data is retrieved through API requests or official datasets and processed using Python scripts.
 
 ## Storage
-The raw data is stored under:
+The raw data is stored in the project data lake under:
 
-`data_sources/eurostat/`
+data_sources/eurostat/
