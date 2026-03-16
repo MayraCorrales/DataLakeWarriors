@@ -13,7 +13,9 @@ Project for the course **Data Warehouse & Data Lake Systems – HSLU**
 - Eurostat
 
 ## Project Goal
-Build a data lake architecture that integrates multiple external data sources and allows querying and analysis using AWS services.
+Design a data lake architecture that integrates multiple external data sources 
+(AviationStack, NewsAPI, and Eurostat) and enables data exploration, querying, 
+and analysis.
 
 ## Architecture
 Data Source APIs  
