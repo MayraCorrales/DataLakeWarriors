@@ -1,37 +1,48 @@
-# Eurostat Data Source
+# Data Ingestion Pipelines
 
-## Description
-Eurostat provides harmonised statistical data across all EU member states.
+## Overview
+This folder contains the data ingestion pipelines used to retrieve data from the external APIs and load it into the project data lake.
 
-In this project, Eurostat serves as the **structural aviation dataset**, providing
-aggregated statistics such as passenger volumes, freight transport, and flight
-movements across European airports.
+Each data source has its own Python ingestion script.
 
-These data act as a **baseline layer** that complements the dynamic signals
-captured from AviationStack (flight data) and NewsAPI (news events).
+## Pipeline Structure
+The pipelines follow a simple ingestion workflow:
 
-## Data Access
-Eurostat datasets are accessed through the Eurostat API:
+1. Connect to the external API  
+2. Retrieve the requested data  
+3. Process and clean the retrieved data  
+4. Store the raw data in the project data lake structure  
 
-https://ec.europa.eu/eurostat/api/
+## Implemented Pipelines
 
-## Example Dataset
-Example datasets used in this project:
+### Eurostat Pipeline
+File: `eurostat_pipeline.py`
 
-- Air passenger transport statistics
-- Airport traffic statistics
-- Air freight volumes
+This pipeline retrieves aviation-related datasets from the Eurostat API and prepares them for analysis.
 
-These datasets allow cross-country comparison across EU member states.
+The pipeline performs the following steps:
 
-## Role in the Project
-Eurostat provides **long-run structured aviation statistics** that allow us to:
+- sends requests to the Eurostat API  
+- retrieves aviation statistics datasets  
+- converts the response into structured data  
+- stores the retrieved data in the project data structure  
 
-- compare aviation activity across EU countries
-- contextualize changes observed in real-time flight data
-- test whether news events correlate with aviation performance indicators
+## Future Pipelines
+Additional ingestion pipelines will be implemented for:
 
-## Storage
-The raw data retrieved from Eurostat is stored in the data lake under:
+- **NewsAPI** (news event data)
+- **AviationStack** (flight activity data)
 
-data_sources/eurostat/
+## Storage Location
+The retrieved datasets are stored under:
+
+`data_sources/`
+
+Each data source has its own folder:
+
+- `data_sources/eurostat`
+- `data_sources/newsapi`
+- `data_sources/aviationstack`
+
+## Purpose
+The ingestion pipelines allow the project to systematically collect and organise data from multiple external sources so that it can later be queried, analysed, and compared.
