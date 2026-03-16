@@ -3,9 +3,9 @@
 Project for the course **Data Warehouse & Data Lake Systems – HSLU**
 
 ## Team
-- Gence Gencehan
-- Cyriel Van Helleputte
-- Mayra Corrales
+- Gence Gencehan (14-656-722)
+- Cyriel Van Helleputte (24-867-715)
+- Mayra Corrales (24-867-681)
 
 ## Data Sources
 - AviationStack API
