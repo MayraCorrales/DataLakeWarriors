@@ -3,9 +3,9 @@
 ## Data Sources
 The project integrates three external data sources:
 
-- AviationStack API
-- NewsAPI
-- Eurostat API
+- AviationStack API (flight data)
+- NewsAPI (news articles)
+- Eurostat API (statistical data)
 
 ## Data Ingestion
 Python scripts retrieve the data from the APIs.
